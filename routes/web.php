@@ -23,3 +23,6 @@ Route::get('/series/create', 'SeriesContoller@create')->name('series.create');
 Route::post('/series', 'SeriesContoller@store')->name('series.store');
 Route::delete('/series/{id}', 'SeriesContoller@destroy')->name('series.destroy');
 
+Route::get('/series/{serieId}/temporadas', 'TemporadasController@index')->name('temporadas.index');
+
+
