@@ -24,6 +24,10 @@ Route::get('/series', 'SeriesContoller@index')->name('series.index');
 Route::get('/series/create', 'SeriesContoller@create')->name('series.create')->middleware('autenticador');
 Route::post('/series', 'SeriesContoller@store')->name('series.store')->middleware('autenticador');
 Route::delete('/series/{id}', 'SeriesContoller@destroy')->name('series.destroy')->middleware('autenticador');
+Route::post('/series/{id}/editaNome', 'SeriesController@editaNome');
+
+
+
 
 Route::get('/series/{serieId}/temporadas', 'TemporadasController@index')->name('temporadas.index');
 
