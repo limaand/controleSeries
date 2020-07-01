@@ -11,6 +11,7 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/series', 'SeriesContoller@index')->name('series.index');
+Route::get('/series', 'SeriesContoller@index')->name('series.index')->middleware('auth');
 Route::get('/series/create', 'SeriesContoller@create')->name('series.create');
 Route::post('/series', 'SeriesContoller@store')->name('series.store');
 Route::delete('/series/{id}', 'SeriesContoller@destroy')->name('series.destroy');
@@ -26,3 +27,10 @@ Route::delete('/series/{id}', 'SeriesContoller@destroy')->name('series.destroy')
 Route::get('/series/{serieId}/temporadas', 'TemporadasController@index')->name('temporadas.index');
 
 
+
+
+
+
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
