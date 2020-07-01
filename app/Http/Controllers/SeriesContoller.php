@@ -9,7 +9,15 @@ use Illuminate\Http\Request;
 
 class SeriesContoller extends Controller
 {
-    //
+   
+   //só pode acessar os métodos se estiver logado 
+   //na aplicação
+  /* public function __construct()
+   {
+     $this->middleware('auth');
+   }*/
+
+
 
     public function index(Request $request){
        

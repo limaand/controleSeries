@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,29 @@
     <title>Controle de Séries</title>
 </head>
 <body>
-   <div class="container">
+
+       
+       <!-- As a link -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 d-flex justify-content-between">
+    
+         <a class="navbar-brand" href="{{route('series.index')}}">Home</a>
+         @auth
+         <a class="text-danger" href="{{route('sair')}}">Sair</a>    
+         @endauth
+
+         @guest
+         <a class="text-danger" href="/entrar">Entrar</a>    
+         @endguest
+         
+      
+    </nav>
+
+
+
+    <div class="container">
+
+    
+    
         <div class="jumbotron">
             <h1 class="display-4"> @yield('cabecalho') </h1>
         </div>
